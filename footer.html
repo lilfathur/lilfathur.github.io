@@ -4,56 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> FOOTER | E-COMMERCE </title>
-    <!-- EXTERNAL LINKS -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/footer.css">
-    <script>
-        // JavaScript function to open WhatsApp link in a new tab or window when the page loads
-        window.onload = function() {
-            window.open('https://wa.me/6281999477323', '_blank');
+    <title>Silahkan Pesan Melalui WhatsApp</title>
+    <!-- External link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Background animation with dark theme */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(45deg, #2c3e50, #34495e, #2c3e50, #34495e); /* Dark gradient */
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+            position: relative;
         }
-    </script>
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Fire effect */
+        .fire {
+            position: absolute;
+            bottom: 0;
+            font-size: 30px;
+            color: #FF6347;
+            animation: flicker 2s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; transform: scale(1.1); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .fire:nth-child(odd) {
+            animation-duration: 1.8s;
+            left: 10%;
+        }
+
+        .fire:nth-child(even) {
+            animation-duration: 2.2s;
+            left: 20%;
+        }
+
+        /* Container for the WhatsApp message and button */
+        .whatsapp-container {
+            text-align: center;
+            background-color: #1a1a1a;  /* Dark background for the container */
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+            position: relative;
+        }
+
+        .whatsapp-title {
+            font-family: 'Montserrat', sans-serif; /* Change font to Montserrat */
+            font-size: 36px; /* Larger size for better visibility */
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 600; /* Bold font weight */
+            letter-spacing: 2px; /* Slightly wider letter spacing for elegance */
+        }
+
+        .whatsapp-description {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            color: #bbb;
+            margin-bottom: 30px;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: #fff;
+            font-size: 18px;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        .whatsapp-btn i {
+            margin-right: 10px;
+        }
+
+        /* Popup Message */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8); /* Darker background for the popup */
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            display: none;
+            z-index: 1000;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            opacity: 0;
+            animation: popupAnimation 0.5s forwards;
+        }
+
+        /* Popup Animation */
+        @keyframes popupAnimation {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .popup.show {
+            display: block;
+        }
+
+        .popup button {
+            margin-top: 20px;
+            background-color: #ff6ec7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #ff0d82;
+        }
+    </style>
 </head>
 
 <body>
-    <footer>
-        <section>    
-            <div id="containerFooter">
-                
-                <div id="webFooter">
-                    <h3> online store </h3>
-                    <p> Jasa Mixing & Mastering Lagu </p>
-                    <p> Take Vocal/Rekaman Lagu </p>
-                    <p> Kebutuhan Sosial Media </p>
-                    <p> Aksesoris</p>
-                </div>
-                <div id="webFooter">
-                    <h3> helpful link </h3>
-                    <p> home </p>
-                    <p> about </p>
-                    <p> contact </p>
-                </div>
-                <div id="webFooter">
-                    <h3> Owner Partners</h3>
-                    <p> Lilkidxane </p>
-                    <p> Fathurkazama.id </p>
-                    <p> Hasbi setiawan01 </p>
-                </div>
-                <div id="webFooter">
-                    <h3> address </h3>
-                    <p> Jember </p>
-                    <p> Tanggul </p>
-                    <p> Jalan Merdeka Raya </p>
-                    <p> Indonesia </p>
-                </div>
-            </div>
-            <div id="credit">
-                <a href="https://ig.me/lilhajime" target="_blank"> x99Gang.biz.id </a> &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp 
-                <a href="https://instagram.com/lilhajime" target="_blank"> 2025 </a>
-            </div>
-        </section>
-    </footer>
+    <!-- Fire effect (campfire-like effect) -->
+    <div class="fire">😂</div>
+    <div class="fire" style="animation-duration: 1.5s; left: 30%;">😹</div>
+    <div class="fire" style="animation-duration: 2.2s; left: 60%;">👍</div>
+    <div class="fire" style="animation-duration: 1.8s; left: 40%;">🔥</div>
+    <div class="fire" style="animation-duration: 2s; left: 80%;">😺</div>
+
+    <!-- Popup Message -->
+    <div id="popup" class="popup">
+        Terimakasih sudah tertarik!
+        <br>
+        <button onclick="closePopup()">Tutup</button>
+    </div>
+
+    <!-- WhatsApp Container -->
+    <div class="whatsapp-container">
+        <div class="whatsapp-title">Coming Soon..<br>Silahkan Pesan Melalui Whatsapp Langsung</div>
+        <div class="whatsapp-description">Click the button below to start chatting with me on WhatsApp. I'm always happy to help!</div>
+        <a href="https://wa.me/6281999477323?text=Halo%2C%20saya%20ingin%20pesan%20lebih%20lanjut." target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Start Chat
+        </a>
+    </div>
+
+    <!-- External Script for Font Awesome (if needed for icons) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script>
+        // Show the popup when the page loads
+        window.onload = function() {
+            document.getElementById("popup").classList.add("show");
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById("popup").classList.remove("show");
+        }
+    </script>
 </body>
 </html>
