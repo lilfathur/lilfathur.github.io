@@ -66,7 +66,7 @@
     "photos": [
       "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/productimage/2019/2/23/dc05b5e5-aa82-493e-bf0b-0c309baf21021550920383101-1.jpg",
       "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/productimage/2019/2/23/1d9bda95-b63e-4312-bbfa-c25b377c96c21550920383126-2.jpg",
-            "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/productimage/2019/2/23/6d0b3b43-e824-44b3-bc72-1f3e0ffab2191550920383139-3.jpg"
+      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/productimage/2019/2/23/6d0b3b43-e824-44b3-bc72-1f3e0ffab2191550920383139-3.jpg"
     ],
     "description": "Jasa Mixing & Mastering Offline/Online dengan harga paling terjangkau.",
     "size": [1, 1, 1, 1, 1, 1],
@@ -75,4 +75,3 @@
     "price": 85000
   }
 ]
-
