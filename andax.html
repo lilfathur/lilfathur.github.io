@@ -8,15 +8,10 @@
     <title>x99Gang Official</title>
     <!-- favicon -->
     <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
-    
+
     <!-- header links -->
     <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    
-    <!-- slider links -->
-    <script src="js/jQuery3.4.1.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
 
     <!-- Custom Style for Audio, WhatsApp, and Popup -->
     <style>
@@ -28,7 +23,6 @@
             color: #333;
         }
 
-        /* Custom Music Player Styling */
         .music-player {
             position: fixed;
             bottom: 20px;
@@ -40,27 +34,24 @@
             align-items: center;
             color: white;
             z-index: 9999;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .music-player button {
             background-color: transparent;
             border: none;
             color: white;
-            font-size: 24px;
+            font-size: 16px;
             margin-right: 10px;
             cursor: pointer;
         }
 
         .music-player button:hover {
             color: #ff4081;
-            transform: scale(1.1);
-            transition: transform 0.3s ease;
         }
 
         .music-player .wave {
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             border-radius: 50%;
             background: #ff4081;
             animation: wave 1.5s infinite;
@@ -83,190 +74,40 @@
             }
         }
 
-        /* WhatsApp Button Styling */
         .whatsapp-btn {
             position: fixed;
             bottom: 80px;
             right: 20px;
             background-color: #25D366;
             color: white;
-            padding: 18px;
+            padding: 15px;
             border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             cursor: pointer;
             z-index: 9999;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .whatsapp-btn i {
-            font-size: 30px;
+            font-size: 24px;
         }
 
         .whatsapp-btn:hover {
             background-color: #128C7E;
-            transform: scale(1.1);
         }
 
-        /* Logo User */
         .user-logo {
             position: fixed;
             top: 20px;
-            left: 20px;
+            right: 20px;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-image: url('images/logo.jpg'); /* Ganti dengan path yang benar */
+            background-image: url('https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo');
             background-size: cover;
-            background-position: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            transition: transform 0.3s ease;
+            z-index: 9999;
         }
 
-        .user-logo:hover {
-            transform: scale(1.1);
-        }
-
-        /* Modal Style for Instagram */
-        .instagram-modal {
-            display: none; 
-            position: fixed; 
-            z-index: 99999; 
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding-top: 100px;
-        }
-
-        .instagram-modal-content {
-            background-color: #fff;
-            margin: auto;
-            padding: 20px;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .instagram-modal-content p {
-            font-size: 18px;
-            color: #333;
-        }
-
-        .instagram-modal .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 28px;
-            color: #aaa;
-        }
-
-        .instagram-modal .close:hover {
-            color: black;
-            cursor: pointer;
-        }
-
-        /* Modal Style for Quote */
-        .quote-modal {
-            display: none; 
-            position: fixed; 
-            z-index: 99999; 
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding-top: 100px;
-        }
-
-        .quote-modal-content {
-            background-color: #fff;
-            margin: auto;
-            padding: 20px;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .quote-modal-content p {
-            font-size: 18px;
-            font-style: italic;
-            color: #333;
-        }
-
-        .quote-modal .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 28px;
-            color: #aaa;
-        }
-
-        .quote-modal .close:hover {
-            color: black;
-            cursor: pointer;
-        }
-
-        /* Modal Style for Subscribe Popup */
-        .subscribe-modal {
-            display: none; 
-            position: fixed; 
-            z-index: 99999; 
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding-top: 100px;
-        }
-
-        .modal-content {
-            background-color: #fff;
-            margin: auto;
-            padding: 20px;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .modal-content h2 {
-            font-size: 22px;
-            margin-bottom: 20px;
-        }
-
-        .subscribe-btn {
-            background-color: #FF0000;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        .subscribe-btn:hover {
-            background-color: #cc0000;
-        }
-
-        .close {
-            color: #aaa;
-            font-size: 28px;
-            font-weight: bold;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
     </style>
 </head>
 
@@ -318,102 +159,153 @@
         function load(url) {
             req = new XMLHttpRequest();
             req.open("GET", url, false);
-                        req.send(null);
+            req.send(null);
             document.getElementById(4).innerHTML = req.responseText;
         }
     </script>
 
-    <!-- Music Player -->
+    <!-- Audio Player -->
     <div class="music-player">
-        <button onclick="togglePlayPause()">
-            <i class="fas fa-play" id="play-pause-icon"></i>
+        <button id="playPauseBtn">
+            <i class="fas fa-play"></i>
         </button>
         <div class="wave"></div>
         <audio id="audioPlayer" loop>
-            <source src="path_to_your_audio_file.mp3" type="audio/mp3">
+            <source src="kasar.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
         </audio>
     </div>
 
     <!-- WhatsApp Button -->
-    <div class="whatsapp-btn" onclick="window.open('https://wa.me/yourphonenumber', '_blank');">
-        <i class="fab fa-whatsapp"></i>
-    </div>
+    <a href="https://wa.me/6285942840954" target="_blank">
+        <div class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </a>
 
-    <!-- User Logo (Clickable) -->
+    <!-- User Logo -->
     <div class="user-logo" onclick="window.location.href='https://instagram.com/yourusername';"></div>
 
     <!-- Instagram Modal -->
-    <div class="instagram-modal" id="instagramModal">
+    <div id="instagramModal" class="instagram-modal">
         <div class="instagram-modal-content">
-            <span class="close" onclick="closeInstagramModal()">&times;</span>
-            <p>Follow us on Instagram!</p>
+            <span class="close" onclick="closeInstagram()">&times;</span>
+            <p>Follow us on Instagram: <strong>@lilhajime</strong></p>
+            <a href="https://www.instagram.com/lilhajime" target="_blank">
+                <button class="subscribe-btn">Follow Now</button>
+            </a>
         </div>
     </div>
 
     <!-- Quote Modal -->
-    <div class="quote-modal" id="quoteModal">
+    <div id="quoteModal" class="quote-modal">
         <div class="quote-modal-content">
-            <span class="close" onclick="closeQuoteModal()">&times;</span>
-            <p>"The best way to predict the future is to create it." – Abraham Lincoln</p>
+            <span class="close" onclick="closeQuote()">&times;</span>
+            <p>"Harapan baru bagi mereka yang memandang dunia hanya dari sudut pandang sendiri." - fathur</p>
         </div>
     </div>
 
-    <!-- Subscribe Popup Modal -->
-    <div class="subscribe-modal" id="subscribeModal">
+    <!-- Subscribe Modal -->
+    <div id="subscribeModal" class="subscribe-modal">
         <div class="modal-content">
-            <span class="close" onclick="closeSubscribeModal()">&times;</span>
-            <h2>Subscribe to our channel!</h2>
-            <button class="subscribe-btn" onclick="window.location.href='https://www.youtube.com/channel/yourchannel';">Subscribe</button>
+            <span class="close" onclick="closeSubscribe()">&times;</span>
+            <h2>Don't forget to Subscribe!</h2>
+            <p>Join the official x99Gang community on YouTube!</p>
+            <a href="https://youtube.com/@lilkidxane" target="_blank">
+                <button class="subscribe-btn">Subscribe Now</button>
+            </a>
         </div>
     </div>
 
-    <!-- Script for Audio Controls -->
+    <!-- slider JS START -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script>
-        function togglePlayPause() {
-            var audioPlayer = document.getElementById('audioPlayer');
-            var playPauseIcon = document.getElementById('play-pause-icon');
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-                playPauseIcon.classList.remove('fa-play');
-                playPauseIcon.classList.add('fa-pause');
-            } else {
+        $(document).ready(function() {
+            $('#containerSlider').slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+            });
+        });
+    </script>
+
+    <!-- Music Play Button Script -->
+    <script>
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const wave = document.querySelector('.music-player .wave');
+
+        let isPlaying = false;
+
+        playPauseBtn.addEventListener('click', function() {
+            if (isPlaying) {
                 audioPlayer.pause();
-                playPauseIcon.classList.remove('fa-pause');
-                playPauseIcon.classList.add('fa-play');
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                wave.style.animation = 'none';
+            } else {
+                audioPlayer.play();
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                wave.style.animation = 'wave 1.5s infinite';
             }
-        }
+            isPlaying = !isPlaying;
+        });
     </script>
 
-    <!-- Script for Modals -->
+    <!-- Instagram Modal Script -->
     <script>
-        // Instagram Modal
-        function openInstagramModal() {
-            document.getElementById('instagramModal').style.display = 'block';
+        var instagramModal = document.getElementById("instagramModal");
+
+        window.onload = function() {
+            setTimeout(function() {
+                instagramModal.style.display = "block";
+            }, 2000);
+        };
+
+        function closeInstagram() {
+            instagramModal.style.display = "none";
+
+            setTimeout(function() {
+                document.getElementById("quoteModal").style.display = "block";
+            }, 500);
         }
 
-        function closeInstagramModal() {
-            document.getElementById('instagramModal').style.display = 'none';
-        }
+        window.onclick = function(event) {
+            if (event.target == instagramModal) {
+                closeInstagram();
+            }
+            if (event.target == quoteModal) {
+                closeQuote();
+            }
+            if (event.target == subscribeModal) {
+                closeSubscribe();
+            }
+        };
+    </script>
 
-        // Quote Modal
-        function openQuoteModal() {
-            document.getElementById('quoteModal').style.display = 'block';
-        }
+    <!-- Quote Modal Script -->
+    <script>
+        var quoteModal = document.getElementById("quoteModal");
 
-        function closeQuoteModal() {
-            document.getElementById('quoteModal').style.display = 'none';
-        }
-
-        // Subscribe Modal
-        function openSubscribeModal() {
-            document.getElementById('subscribeModal').style.display = 'block';
-        }
-
-        function closeSubscribeModal() {
-            document.getElementById('subscribeModal').style.display = 'none';
+        function closeQuote() {
+            quoteModal.style.display = "none";
+            setTimeout(function() {
+                subscribeModal.style.display = "block";
+            }, 500);
         }
     </script>
+
+    <!-- Subscribe Modal Script -->
+    <script>
+        var subscribeModal = document.getElementById("subscribeModal");
+
+        function closeSubscribe() {
+            subscribeModal.style.display = "none";
+        }
+    </script>
+
 </body>
 
 </html>
-
