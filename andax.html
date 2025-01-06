@@ -1,3 +1,14 @@
+Untuk membuat tampilan logo Play (untuk musik), WhatsApp, dan logo pengguna lebih keren dan lebih natural, kita bisa menggunakan ikon yang lebih modern dan stylish dengan menambahkan beberapa efek CSS agar tampilan mereka lebih menarik. Berikut adalah beberapa perubahan yang bisa kamu lakukan pada kode yang sudah ada:
+
+### 1. Mengubah Logo Play Musik dan WhatsApp
+Untuk mendapatkan ikon yang lebih keren, kita akan menggunakan ikon dari Font Awesome yang lebih dinamis dan menggunakan efek hover yang lebih smooth.
+
+### 2. Mengubah Logo Pengguna (User)
+Logo pengguna bisa diganti dengan gambar yang lebih natural dan disesuaikan posisinya. Bisa menggunakan gambar bulat dengan border dan sedikit efek hover agar terlihat lebih modern.
+
+Berikut adalah contoh pengubahannya:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,18 +20,16 @@
     <!-- favicon -->
     <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- Google Fonts -->
+    <!-- header links -->
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     
-    <!-- Slick Carousel -->
+    <!-- slider links -->
     <script src="js/jQuery3.4.1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
 
-    <!-- Custom Styles -->
+    <!-- Custom Style for Audio, WhatsApp, and Popup -->
     <style>
         body {
             font-family: 'Lato', sans-serif;
@@ -30,7 +39,7 @@
             color: #333;
         }
 
-        /* Music Player */
+        /* Custom Music Player Styling */
         .music-player {
             position: fixed;
             bottom: 20px;
@@ -42,24 +51,27 @@
             align-items: center;
             color: white;
             z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .music-player button {
             background-color: transparent;
             border: none;
             color: white;
-            font-size: 16px;
+            font-size: 24px;
             margin-right: 10px;
             cursor: pointer;
         }
 
         .music-player button:hover {
             color: #ff4081;
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
         }
 
         .music-player .wave {
-            width: 25px;
-            height: 25px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             background: #ff4081;
             animation: wave 1.5s infinite;
@@ -82,47 +94,138 @@
             }
         }
 
-        /* WhatsApp Button */
+        /* WhatsApp Button Styling */
         .whatsapp-btn {
             position: fixed;
             bottom: 80px;
             right: 20px;
             background-color: #25D366;
             color: white;
-            padding: 15px;
+            padding: 18px;
             border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             z-index: 9999;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .whatsapp-btn i {
-            font-size: 24px;
+            font-size: 30px;
         }
 
         .whatsapp-btn:hover {
             background-color: #128C7E;
+            transform: scale(1.1);
         }
 
-        /* User Logo */
+        /* Logo User */
         .user-logo {
             position: fixed;
             top: 20px;
             left: 20px;
-            z-index: 9999;
-        }
-
-        .user-logo img {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
+            background-image: url('path/to/your/user/logo.jpg'); /* Update this path */
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
-        /* Modal Styles */
-        .instagram-modal, .quote-modal, .subscribe-modal {
-            display: none;
-            position: fixed;
-            z-index: 99999;
+        .user-logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal Style for Instagram */
+        .instagram-modal {
+            display: none; 
+            position: fixed; 
+            z-index: 99999; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 100px;
+        }
+
+        .instagram-modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .instagram-modal-content p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .instagram-modal .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            color: #aaa;
+        }
+
+        .instagram-modal .close:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+        /* Modal Style for Quote */
+        .quote-modal {
+            display: none; 
+            position: fixed; 
+            z-index: 99999; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 100px;
+        }
+
+        .quote-modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .quote-modal-content p {
+            font-size: 18px;
+            font-style: italic;
+            color: #333;
+        }
+
+        .quote-modal .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            color: #aaa;
+        }
+
+        .quote-modal .close:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+        /* Modal Style for Subscribe Popup */
+        .subscribe-modal {
+            display: none; 
+            position: fixed; 
+            z-index: 99999; 
             left: 0;
             top: 0;
             width: 100%;
@@ -161,67 +264,74 @@
         }
 
         .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
             position: absolute;
             top: 10px;
             right: 20px;
-            font-size: 28px;
-            color: #aaa;
-            cursor: pointer;
         }
 
-        .close:hover {
+        .close:hover,
+        .close:focus {
             color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
     <!-- HEADER -->
-    <div id="header"></div>
+    <div id="1"></div>
     <script>
-        function loadHeader(url) {
-            var req = new XMLHttpRequest();
+        load("header.html");
+
+        function load(url) {
+            req = new XMLHttpRequest();
             req.open("GET", url, false);
             req.send(null);
-            document.getElementById('header').innerHTML = req.responseText;
+            document.getElementById(1).innerHTML = req.responseText;
         }
-        loadHeader("header.html");
     </script>
     
     <!-- SLIDER -->
-    <div id="slider"></div>
+    <div id="2"></div>
     <script>
-        function loadSlider(url) {
-            var req = new XMLHttpRequest();
+        load("slider.html");
+
+        function load(url) {
+            req = new XMLHttpRequest();
             req.open("GET", url, false);
             req.send(null);
-            document.getElementById('slider').innerHTML = req.responseText;
+                        document.getElementById(2).innerHTML = req.responseText;
         }
-        loadSlider("slider.html");
     </script>
 
     <!-- CONTENT SECTION -->
-    <div id="content"></div>
+    <div id="3"></div>
     <script>
-        function loadContent(url) {
-            var req = new XMLHttpRequest();
+        load("content.html");
+
+        function load(url) {
+            req = new XMLHttpRequest();
             req.open("GET", url, false);
             req.send(null);
-            document.getElementById('content').innerHTML = req.responseText;
+            document.getElementById(3).innerHTML = req.responseText;
         }
-        loadContent("content.html");
     </script>
 
     <!-- FOOTER -->
-    <div id="footer"></div>
+    <div id="4"></div>
     <script>
-        function loadFooter(url) {
-            var req = new XMLHttpRequest();
+        load("footer.html");
+
+        function load(url) {
+            req = new XMLHttpRequest();
             req.open("GET", url, false);
             req.send(null);
-            document.getElementById('footer').innerHTML = req.responseText;
+            document.getElementById(4).innerHTML = req.responseText;
         }
-        loadFooter("footer.html");
     </script>
 
     <!-- Audio Player -->
@@ -231,7 +341,7 @@
         </button>
         <div class="wave"></div>
         <audio id="audioPlayer" loop>
-            <source src="kasar.mp3" type="audio/mp3">
+            <source src="/kasar.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </div>
@@ -243,14 +353,9 @@
         </div>
     </a>
 
-    <!-- User Logo -->
-    <div class="user-logo">
-        <img src="path/to/user/logo.png" alt="User Logo" />
-    </div>
-
     <!-- Instagram Modal -->
     <div id="instagramModal" class="instagram-modal">
-        <div class="modal-content">
+        <div class="instagram-modal-content">
             <span class="close" onclick="closeInstagram()">&times;</span>
             <p>Follow us on Instagram: <strong>@lilhajime</strong></p>
             <a href="https://www.instagram.com/lilhajime" target="_blank">
@@ -261,7 +366,7 @@
 
     <!-- Quote Modal -->
     <div id="quoteModal" class="quote-modal">
-        <div class="modal-content">
+        <div class="quote-modal-content">
             <span class="close" onclick="closeQuote()">&times;</span>
             <p>"Harapan baru bagi mereka yang memandang dunia hanya dari sudut pandang sendiri." - fathur</p>
         </div>
@@ -279,7 +384,7 @@
         </div>
     </div>
 
-    <!-- slider JS START -->
+    <!-- Slider JS START -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -289,12 +394,11 @@
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 autoplay: true,
-                autoplaySpeed:
-                    1500,
+                autoplaySpeed: 1500,
             });
         });
     </script>
-
+    
     <!-- Music Play Button Script -->
     <script>
         const playPauseBtn = document.getElementById('playPauseBtn');
