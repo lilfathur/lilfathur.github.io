@@ -115,7 +115,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-image: url('path/to/your/user/logo.jpg'); /* Update this path */
+            background-image: url('path/to/your/user-logo.jpg'); /* Update this path */
             background-size: cover;
             background-position: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -310,175 +310,120 @@
         }
     </script>
 
-    <!-- FOOTER -->
-    <div id="4"></div>
+        <!-- FOOTER -->
+    <div id="footer"></div>
     <script>
         load("footer.html");
 
         function load(url) {
-            req = new XMLHttpRequest
-                        req.open("GET", url, false);
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
             req.send(null);
-            document.getElementById(4).innerHTML = req.responseText;
+            document.getElementById("footer").innerHTML = req.responseText;
         }
     </script>
 
-    <!-- Audio Player -->
+    <!-- Music Player -->
     <div class="music-player">
-        <button id="playPauseBtn">
-            <i class="fas fa-play"></i>
+        <button onclick="togglePlay()">
+            <i id="playPauseIcon" class="fas fa-play"></i>
         </button>
+        <audio id="audio" src="path/to/your/music.mp3" preload="auto"></audio>
         <div class="wave"></div>
-        <audio id="audioPlayer" loop>
-            <source src="/kasar.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
     </div>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/6285942840954" target="_blank">
-        <div class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i>
-        </div>
-    </a>
+    <div class="whatsapp-btn" onclick="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
 
     <!-- User Logo -->
-    <div class="user-logo" onclick="window.location.href='profile.html';"></div> <!-- Replace with your profile link -->
+    <div class="user-logo" onclick="openUserProfile()"></div>
 
     <!-- Instagram Modal -->
     <div id="instagramModal" class="instagram-modal">
         <div class="instagram-modal-content">
-            <span class="close" onclick="closeInstagram()">&times;</span>
-            <p>Follow us on Instagram: <strong>@lilhajime</strong></p>
-            <a href="https://www.instagram.com/lilhajime" target="_blank">
-                <button class="subscribe-btn">Follow Now</button>
-            </a>
+            <span class="close" onclick="closeInstagramModal()">&times;</span>
+            <p>Follow us on Instagram!</p>
         </div>
     </div>
 
     <!-- Quote Modal -->
     <div id="quoteModal" class="quote-modal">
         <div class="quote-modal-content">
-            <span class="close" onclick="closeQuote()">&times;</span>
-            <p>"Harapan baru bagi mereka yang memandang dunia hanya dari sudut pandang sendiri." - fathur</p>
+            <span class="close" onclick="closeQuoteModal()">&times;</span>
+            <p>"Your Quote Here"</p>
         </div>
     </div>
 
     <!-- Subscribe Modal -->
     <div id="subscribeModal" class="subscribe-modal">
         <div class="modal-content">
-            <span class="close" onclick="closeSubscribe()">&times;</span>
-            <h2>Don't forget to Subscribe!</h2>
-            <p>Join the official x99Gang community on YouTube!</p>
-            <a href="https://youtube.com/@lilkidxane" target="_blank">
-                <button class="subscribe-btn">Subscribe Now</button>
-            </a>
+            <span class="close" onclick="closeSubscribeModal()">&times;</span>
+            <h2>Subscribe to Our Channel</h2>
+            <p>Get the latest updates and more!</p>
+            <button class="subscribe-btn" onclick="subscribe()">Subscribe</button>
         </div>
     </div>
 
-    <!-- Slider JS START -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#containerSlider').slick({
-                dots: true,
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 1500,
-            });
-        });
-    </script>
-    
-    <!-- Music Play Button Script -->
-    <script>
-        const playPauseBtn = document.getElementById('playPauseBtn');
-        const audioPlayer = document.getElementById('audioPlayer');
-        const wave = document.querySelector('.music-player .wave');
-
-        let isPlaying = false;
-
-        playPauseBtn.addEventListener('click', function() {
-            if (isPlaying) {
-                audioPlayer.pause();
-                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-                wave.style.animation = 'none';
+        // Toggle play/pause for the music player
+        function togglePlay() {
+            var audio = document.getElementById("audio");
+            var playPauseIcon = document.getElementById("playPauseIcon");
+            if (audio.paused) {
+                audio.play();
+                playPauseIcon.classList.remove("fa-play");
+                playPauseIcon.classList.add("fa-pause");
             } else {
-                audioPlayer.play();
-                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                wave.style.animation = 'wave 1.5s infinite';
+                audio.pause();
+                playPauseIcon.classList.remove("fa-pause");
+                playPauseIcon.classList.add("fa-play");
             }
-            isPlaying = !isPlaying;
-        });
-    </script>
-
-    <!-- Instagram Modal Script -->
-    <script>
-        var instagramModal = document.getElementById("instagramModal");
-        var closeInstagramBtn = document.getElementsByClassName("close")[0];
-
-        // Show the Instagram modal when the page loads (2 seconds after load)
-        window.onload = function() {
-            setTimeout(function() {
-                instagramModal.style.display = "block";
-            }, 2000); // Show Instagram modal after 2 seconds
-        };
-
-        // Close the Instagram modal when the user clicks the close button
-        function closeInstagram() {
-            instagramModal.style.display = "none";
-
-            // After closing the Instagram modal, show the quote modal
-            setTimeout(function() {
-                document.getElementById("quoteModal").style.display = "block";
-            }, 500); // Wait for the Instagram modal to close before showing the quote modal
         }
 
-        // Close the modal if the user clicks outside of the modal
-        window.onclick = function(event) {
-            if (event.target == instagramModal) {
-                closeInstagram();
-            }
-            if (event.target == quoteModal) {
-                closeQuote();
-            }
-            if (event.target == subscribeModal) {
-                closeSubscribe();
-            }
-        };
-    </script>
+        // Open WhatsApp link
+        function openWhatsApp() {
+            window.open("https://wa.me/yourphone", "_blank");
+        }
 
-    <!-- Quote Modal Script -->
-    <script>
-        var quoteModal = document.getElementById("quoteModal");
-        var closeQuoteBtn = document.getElementsByClassName("close")[1];
+        // Open user profile (You can replace this with a URL or profile action)
+        function openUserProfile() {
+            alert("User profile clicked!");
+        }
 
-        // Show the quote modal after Instagram modal is closed (3 seconds after)
-        function closeQuote() {
-            quoteModal.style.display = "none";
+        // Instagram Modal
+        function openInstagramModal() {
+            document.getElementById("instagramModal").style.display = "block";
+        }
 
-            // After closing the quote modal, show the subscribe modal
-            setTimeout(function() {
-                document.getElementById("subscribeModal").style.display = "block";
-            }, 500); // Wait for the quote modal to close before showing the subscribe modal
+        function closeInstagramModal() {
+            document.getElementById("instagramModal").style.display = "none";
+        }
+
+        // Quote Modal
+        function openQuoteModal() {
+            document.getElementById("quoteModal").style.display = "block";
+        }
+
+        function closeQuoteModal() {
+            document.getElementById("quoteModal").style.display = "none";
+        }
+
+        // Subscribe Modal
+        function openSubscribeModal() {
+            document.getElementById("subscribeModal").style.display = "block";
+        }
+
+        function closeSubscribeModal() {
+            document.getElementById("subscribeModal").style.display = "none";
+        }
+
+        function subscribe() {
+            alert("Thank you for subscribing!");
         }
     </script>
 
-    <!-- Subscribe Modal Script -->
-    <script>
-        var subscribeModal = document.getElementById("subscribeModal");
-        var closeSubscribeBtn = document.getElementsByClassName("close")[2];
-
-        // Close the subscribe modal when the user clicks the close button
-        function closeSubscribe() {
-            subscribeModal.style.display = "none";
-        }
-    </script>
-
-    <!-- content JS -->
-    <script src="content.js"></script>
 </body>
 
 </html>
-
