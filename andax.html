@@ -35,49 +35,26 @@
             right: 100px;
             background-color: #333;
             padding: 10px 15px;
-            border-radius: 8px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
+            justify-content: center;
             color: white;
             z-index: 9999;
+            width: 60px;
+            height: 60px;
         }
 
         .music-player button {
             background-color: transparent;
             border: none;
             color: white;
-            font-size: 16px;
-            margin-right: 10px;
+            font-size: 30px;
             cursor: pointer;
         }
 
         .music-player button:hover {
             color: #ff4081;
-        }
-
-        .music-player .wave {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: #ff4081;
-            animation: wave 1.5s infinite;
-        }
-
-        @keyframes wave {
-            0% {
-                transform: scale(0.5);
-                opacity: 0.7;
-            }
-
-            50% {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(0.5);
-                opacity: 0.7;
-            }
         }
 
         /* WhatsApp Button Styling */
@@ -126,9 +103,9 @@
 
         /* Modal Style for Instagram */
         .instagram-modal {
-            display: none; 
-            position: fixed; 
-            z-index: 99999; 
+            display: none;
+            position: fixed;
+            z-index: 99999;
             left: 0;
             top: 0;
             width: 100%;
@@ -167,9 +144,9 @@
 
         /* Modal Style for Quote */
         .quote-modal {
-            display: none; 
-            position: fixed; 
-            z-index: 99999; 
+            display: none;
+            position: fixed;
+            z-index: 99999;
             left: 0;
             top: 0;
             width: 100%;
@@ -209,9 +186,9 @@
 
         /* Modal Style for Subscribe Popup */
         .subscribe-modal {
-            display: none; 
-            position: fixed; 
-            z-index: 99999; 
+            display: none;
+            position: fixed;
+            z-index: 99999;
             left: 0;
             top: 0;
             width: 100%;
@@ -326,14 +303,13 @@
             <source src="/kasar.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
-        <button onclick="document.getElementById('audioPlayer').play()">Play</button>
-        <div class="wave"></div>
+        <button onclick="document.getElementById('audioPlayer').play()">▶</button>
     </div>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/6285942840954" target="_blank">
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com" target="_blank">
         <div class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-facebook"></i>
         </div>
     </a>
 
