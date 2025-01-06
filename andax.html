@@ -115,7 +115,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-image: url('path/to/your/user-logo.jpg'); /* Update this path */
+            background-image: url('images/logo.jpg'); /* Ganti dengan path yang benar */
             background-size: cover;
             background-position: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -310,38 +310,40 @@
         }
     </script>
 
-        <!-- FOOTER -->
-    <div id="footer"></div>
+    <!-- FOOTER -->
+    <div id="4"></div>
     <script>
         load("footer.html");
 
         function load(url) {
             req = new XMLHttpRequest();
             req.open("GET", url, false);
-            req.send(null);
-            document.getElementById("footer").innerHTML = req.responseText;
+                        req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
         }
     </script>
 
     <!-- Music Player -->
     <div class="music-player">
-        <button onclick="togglePlay()">
-            <i id="playPauseIcon" class="fas fa-play"></i>
+        <button onclick="togglePlayPause()">
+            <i class="fas fa-play" id="play-pause-icon"></i>
         </button>
-        <audio id="audio" src="path/to/your/music.mp3" preload="auto"></audio>
         <div class="wave"></div>
+        <audio id="audioPlayer" loop>
+            <source src="path_to_your_audio_file.mp3" type="audio/mp3">
+        </audio>
     </div>
 
     <!-- WhatsApp Button -->
-    <div class="whatsapp-btn" onclick="openWhatsApp()">
+    <div class="whatsapp-btn" onclick="window.open('https://wa.me/yourphonenumber', '_blank');">
         <i class="fab fa-whatsapp"></i>
     </div>
 
-    <!-- User Logo -->
-    <div class="user-logo" onclick="openUserProfile()"></div>
+    <!-- User Logo (Clickable) -->
+    <div class="user-logo" onclick="window.location.href='https://instagram.com/yourusername';"></div>
 
     <!-- Instagram Modal -->
-    <div id="instagramModal" class="instagram-modal">
+    <div class="instagram-modal" id="instagramModal">
         <div class="instagram-modal-content">
             <span class="close" onclick="closeInstagramModal()">&times;</span>
             <p>Follow us on Instagram!</p>
@@ -349,81 +351,69 @@
     </div>
 
     <!-- Quote Modal -->
-    <div id="quoteModal" class="quote-modal">
+    <div class="quote-modal" id="quoteModal">
         <div class="quote-modal-content">
             <span class="close" onclick="closeQuoteModal()">&times;</span>
-            <p>"Your Quote Here"</p>
+            <p>"The best way to predict the future is to create it." – Abraham Lincoln</p>
         </div>
     </div>
 
-    <!-- Subscribe Modal -->
-    <div id="subscribeModal" class="subscribe-modal">
+    <!-- Subscribe Popup Modal -->
+    <div class="subscribe-modal" id="subscribeModal">
         <div class="modal-content">
             <span class="close" onclick="closeSubscribeModal()">&times;</span>
-            <h2>Subscribe to Our Channel</h2>
-            <p>Get the latest updates and more!</p>
-            <button class="subscribe-btn" onclick="subscribe()">Subscribe</button>
+            <h2>Subscribe to our channel!</h2>
+            <button class="subscribe-btn" onclick="window.location.href='https://www.youtube.com/channel/yourchannel';">Subscribe</button>
         </div>
     </div>
 
+    <!-- Script for Audio Controls -->
     <script>
-        // Toggle play/pause for the music player
-        function togglePlay() {
-            var audio = document.getElementById("audio");
-            var playPauseIcon = document.getElementById("playPauseIcon");
-            if (audio.paused) {
-                audio.play();
-                playPauseIcon.classList.remove("fa-play");
-                playPauseIcon.classList.add("fa-pause");
+        function togglePlayPause() {
+            var audioPlayer = document.getElementById('audioPlayer');
+            var playPauseIcon = document.getElementById('play-pause-icon');
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseIcon.classList.remove('fa-play');
+                playPauseIcon.classList.add('fa-pause');
             } else {
-                audio.pause();
-                playPauseIcon.classList.remove("fa-pause");
-                playPauseIcon.classList.add("fa-play");
+                audioPlayer.pause();
+                playPauseIcon.classList.remove('fa-pause');
+                playPauseIcon.classList.add('fa-play');
             }
         }
+    </script>
 
-        // Open WhatsApp link
-        function openWhatsApp() {
-            window.open("https://wa.me/yourphone", "_blank");
-        }
-
-        // Open user profile (You can replace this with a URL or profile action)
-        function openUserProfile() {
-            alert("User profile clicked!");
-        }
-
+    <!-- Script for Modals -->
+    <script>
         // Instagram Modal
         function openInstagramModal() {
-            document.getElementById("instagramModal").style.display = "block";
+            document.getElementById('instagramModal').style.display = 'block';
         }
 
         function closeInstagramModal() {
-            document.getElementById("instagramModal").style.display = "none";
+            document.getElementById('instagramModal').style.display = 'none';
         }
 
         // Quote Modal
         function openQuoteModal() {
-            document.getElementById("quoteModal").style.display = "block";
+            document.getElementById('quoteModal').style.display = 'block';
         }
 
         function closeQuoteModal() {
-            document.getElementById("quoteModal").style.display = "none";
+            document.getElementById('quoteModal').style.display = 'none';
         }
 
         // Subscribe Modal
         function openSubscribeModal() {
-            document.getElementById("subscribeModal").style.display = "block";
+            document.getElementById('subscribeModal').style.display = 'block';
         }
 
         function closeSubscribeModal() {
-            document.getElementById("subscribeModal").style.display = "none";
-        }
-
-        function subscribe() {
-            alert("Thank you for subscribing!");
+            document.getElementById('subscribeModal').style.display = 'none';
         }
     </script>
-
 </body>
 
 </html>
+
