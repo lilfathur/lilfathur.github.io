@@ -293,7 +293,7 @@
             req = new XMLHttpRequest();
             req.open("GET", url, false);
             req.send(null);
-                        document.getElementById(2).innerHTML = req.responseText;
+            document.getElementById(2).innerHTML = req.responseText;
         }
     </script>
 
@@ -316,8 +316,8 @@
         load("footer.html");
 
         function load(url) {
-            req = new XMLHttpRequest();
-            req.open("GET", url, false);
+            req = new XMLHttpRequest
+                        req.open("GET", url, false);
             req.send(null);
             document.getElementById(4).innerHTML = req.responseText;
         }
@@ -341,6 +341,9 @@
             <i class="fab fa-whatsapp"></i>
         </div>
     </a>
+
+    <!-- User Logo -->
+    <div class="user-logo" onclick="window.location.href='profile.html';"></div> <!-- Replace with your profile link -->
 
     <!-- Instagram Modal -->
     <div id="instagramModal" class="instagram-modal">
@@ -478,3 +481,4 @@
 </body>
 
 </html>
+
